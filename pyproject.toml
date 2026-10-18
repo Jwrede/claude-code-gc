@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "claude-code-gc"
+version = "0.1.0"
+description = "Find and remove unused Claude Code versions (CLI, editor extensions, VSIX cache)."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Jonathan Wrede" }]
+classifiers = ["Operating System :: POSIX :: Linux", "Programming Language :: Python :: 3"]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+claude-code-gc = "claude_code_gc.cli:main"
+
+[tool.ruff]
+line-length = 120
